@@ -102,8 +102,8 @@ void wrapper(int* adj, int* xadj, int* tadj, int* txadj, double* rv, double* cv,
 	double* err = new double(0);
 
 	cudaEvent_t start, stop;
-  cudaEventCreate(&start);
-  cudaEventRecord(start, 0);
+  	cudaEventCreate(&start);
+  	cudaEventRecord(start, 0);
 
 	for (int i = 0; i < siter; i++) {
 		// Fill rv 
@@ -125,13 +125,13 @@ void wrapper(int* adj, int* xadj, int* tadj, int* txadj, double* rv, double* cv,
 		std::cout << "iter " << i << " - error: " << *err << std::endl;
 	}
   
-  cudaEventCreate(&stop);
-  cudaEventRecord(stop, 0);
-  cudaEventSynchronize(stop);
+  	cudaEventCreate(&stop);
+  	cudaEventRecord(stop, 0);
+  	cudaEventSynchronize(stop);
   
 	float elapsedTime;
-  cudaEventElapsedTime(&elapsedTime, start, stop);
-  printf("GPU scale took: %f s\n", elapsedTime/1000);
+ 	cudaEventElapsedTime(&elapsedTime, start, stop);
+ 	printf("GPU scale took: %f s\n", elapsedTime/1000);
     
 	gpuErrchk(cudaFree(xadj_d));
 	gpuErrchk(cudaFree(adj_d));
