@@ -23,14 +23,14 @@ $ module load cuda/10.0
 ```shell
 $ cd ./gpu
 $ nvcc kernel.cu main.cpp -O3 -Xcompiler -fopenmp
-$ ./a.out ./cage15.mtxbin 5 4
+$ ./a.out ./cage15.mtxbin 5
 ```
-where `5` is number of iterations and `4` is number of threads.
+where `5` is number of iterations. 
 
 ### CPU 
 ```shell
 $ cd ./cpu
 $ g++ main.cpp -fopenmp -O3
-$ ./a.out ./cage15.mtxbin 5
+$ ./a.out ./cage15.mtxbin 5 4
 ```
-where `5` is number of iterations. 
+where `5` is number of iterations and `4` is number of threads.
